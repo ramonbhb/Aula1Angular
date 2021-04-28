@@ -1,0 +1,26 @@
+<app-nav></app-nav>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let personagem of personagens">    
+            <div class="col-4">
+                <div *ngIf="personagem.temporada == 1 || personagem.temporada != 1">               
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ personagem.imagem }}" class="card-img-top imagemPersonagem" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ personagem.nome }} - {{ personagem.familia }}</h5>
+                        <p class="card-text">{{ personagem.familia }} - {{ personagem.temporada }} Temporada</p>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="#" class="btn btn-primary" (click)="saibaMais()">Saiba Mais</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="btn btn-primary" (notify)="notificar()">Notificar</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
